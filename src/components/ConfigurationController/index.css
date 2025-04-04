@@ -1,0 +1,15 @@
+/* Write your CSS here */
+.configuration-container {
+  background-color: #475569;
+  padding-left: 45px;
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+.configuration-heading {
+  color: white;
+  font-size: 20px;
+}
+.input-text {
+  color: white;
+  margin-left: 4px;
+}
