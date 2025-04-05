@@ -4,6 +4,7 @@
 }
 .body-container {
   display: flex;
+  height: 250px;
 }
 .left-navbar-container {
   background-color: #e2e8f0;
@@ -35,5 +36,8 @@
   align-items: center;
   width: 70%;
   margin-bottom: 5px;
-  margin:auto;
+  margin: auto;
+}
+.hide-content {
+  display: none;
 }

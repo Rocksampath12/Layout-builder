@@ -1,7 +1,7 @@
 // Write your code here
 import {Component} from 'react'
 
-import ConfigurationContext from '../../context/ConfigurationContext.js'
+import ConfigurationContext from '../../context/ConfigurationContext'
 
 import './index.css'
 
@@ -10,7 +10,25 @@ class ConfigurationController extends Component {
     return (
       <ConfigurationContext.Consumer>
         {value => {
-          let {showContent, showLeftNavbar, showRightNavbar} = value
+          const {
+            showContent,
+            showLeftNavbar,
+            showRightNavbar,
+            onToggleShowContent,
+            onToggleShowLeftNavbar,
+            onToggleShowRightNavbar,
+          } = value
+          const changeContextFunc = () => {
+            onToggleShowContent()
+          }
+
+          const changeLeftNavbarFunc = () => {
+            onToggleShowLeftNavbar()
+          }
+
+          const changeRightNavbarFunc = () => {
+            onToggleShowRightNavbar()
+          }
           return (
             <div className="configuration-container">
               <h1 className="configuration-heading">Layout</h1>
@@ -18,9 +36,9 @@ class ConfigurationController extends Component {
                 type="checkbox"
                 id="layout-checkbox"
                 checked={showContent}
-                onChange={this.changeContent}
+                onChange={changeContextFunc}
               />
-              <label for="layout-checkbox" className="input-text">
+              <label htmlFor="layout-checkbox" className="input-text">
                 Content
               </label>
               <br />
@@ -28,9 +46,9 @@ class ConfigurationController extends Component {
                 type="checkbox"
                 id="left-navbar-checkbox"
                 checked={showLeftNavbar}
-                onChange={this.changeLeftNavbar}
+                onChange={changeLeftNavbarFunc}
               />
-              <label for="left-navbar-checkbox" className="input-text">
+              <label htmlFor="left-navbar-checkbox" className="input-text">
                 Left Navbar
               </label>
               <br />
@@ -38,10 +56,10 @@ class ConfigurationController extends Component {
                 type="checkbox"
                 id="right-navbar-checkbox-checkbox"
                 checked={showRightNavbar}
-                onChange={this.changeRightNavbar}
+                onChange={changeRightNavbarFunc}
               />
               <label
-                for="right-navbar-checkbox-checkbox"
+                htmlFor="right-navbar-checkbox-checkbox"
                 className="input-text"
               >
                 Right Navbar
