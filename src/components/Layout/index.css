@@ -1,9 +1,9 @@
 /* Write your CSS here */
-.layout-container{
-    display:flex;
-    justify-content:center;
-    align-items:center; /*Optional*/
+.layout-container {
+  display: flex;
+  justify-content: center;
+  align-items: center; /*Optional*/
 }
-.layout-box{
-    width:80%;
+.layout-box {
+  width: 80%;
 }
